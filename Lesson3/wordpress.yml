@@ -1,0 +1,11 @@
+---
+- hosts: prod_gb
+
+  vars_files:
+    - vars/wordpress.yml 
+  roles:
+    - common
+    - geerlingguy.nginx 
+    - geerlingguy.php
+    - geerlingguy.mysql
+    - wordpress
