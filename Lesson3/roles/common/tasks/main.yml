@@ -1,11 +1,11 @@
 ---
 # tasks file for common
 
-- name: Install packages www
+- name: Install packages
   package:
     pkg: "{{ item }}"
     state: installed
   with_items:
     - epel-release
   when:
-    - ansible_os_family == 'RedHat'
+    - ansible_os_family == "RedHat"
