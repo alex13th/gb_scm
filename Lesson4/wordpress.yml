@@ -1,0 +1,23 @@
+---
+- hosts: prod_gb
+
+  vars_files:
+    - vars/wordpress.yml
+  roles:
+    - common
+    - geerlingguy.nginx
+    - geerlingguy.php
+    - geerlingguy.mysql
+    - wordpress
+
+  tasks:
+
+    - name: Enabling http for zone public
+      ansible.posix.firewalld:
+        zone: public
+        service: http
+        state: enabled
+        permanent: true
+        immediate: true
+      when:
+        - ansible_os_family == "RedHat"
