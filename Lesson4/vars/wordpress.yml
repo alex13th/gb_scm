@@ -1,8 +1,5 @@
 ---
 server_name: "192.168.0.30"
-mysql_db: "wordpress"
-mysql_user: "wordpress"
-mysql_password: "WordpreSS0!"
 
 nginx_vhosts:
   - listen: "80"
